@@ -120,6 +120,15 @@ export async function callAIAPI(
       };
       break;
 
+    case 'kimi':
+      headers['Authorization'] = `Bearer ${apiKey}`;
+      body = {
+        model,
+        messages,
+        max_tokens: 4000,
+      };
+      break;
+
     default:
       headers['Authorization'] = `Bearer ${apiKey}`;
       body = {
