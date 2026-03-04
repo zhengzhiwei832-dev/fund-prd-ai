@@ -137,7 +137,7 @@ ${context ? `补充上下文信息：\n${context}\n` : ''}
         generatedAt: new Date().toISOString(),
       },
     });
-  } catch (_error) {
+  } catch {
     console.error('Generate error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : '生成失败' },
