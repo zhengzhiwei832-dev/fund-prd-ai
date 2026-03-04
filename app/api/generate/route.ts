@@ -137,10 +137,10 @@ ${context ? `补充上下文信息：\n${context}\n` : ''}
         generatedAt: new Date().toISOString(),
       },
     });
-  } catch {
-    console.error('Generate error:', error);
+  } catch (err) {
+    console.error('Generate error:', err);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : '生成失败' },
+      { error: err instanceof Error ? err.message : '生成失败' },
       { status: 500 }
     );
   }
