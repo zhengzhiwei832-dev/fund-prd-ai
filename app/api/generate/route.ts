@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { AI_PROVIDERS, AIMessage } from '@/lib/ai-config';
+import { AI_PROVIDERS } from '@/lib/ai-config';
 import { getKnowledgeBaseText } from '@/lib/knowledge-base';
 
 export async function POST(request: NextRequest) {
@@ -43,7 +43,7 @@ ${context ? `补充上下文信息：\n${context}\n` : ''}
 
 请生成一份完整的 PRD 文档。`;
 
-    const messages: AIMessage[] = [
+    const messages = [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },
     ];
@@ -137,7 +137,7 @@ ${context ? `补充上下文信息：\n${context}\n` : ''}
         generatedAt: new Date().toISOString(),
       },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error('Generate error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : '生成失败' },
