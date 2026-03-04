@@ -129,7 +129,7 @@ export default function AdminPage() {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date" tickFormatter={(date) => date.slice(5)} />
                     <YAxis domain={[0, 100]} tickFormatter={(val) => `${val}%`} />
-                    <Tooltip formatter={(val: number) => `${val.toFixed(1)}%`} />
+                    <Tooltip formatter={(val) => typeof val === 'number' ? `${val.toFixed(1)}%` : val} />
                     <Line
                       type="monotone"
                       dataKey="rate"
