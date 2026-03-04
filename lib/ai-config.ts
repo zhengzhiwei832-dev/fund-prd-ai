@@ -92,7 +92,7 @@ export async function callAIAPI(
     'Content-Type': 'application/json',
   };
 
-  let body: Record<string, any>;
+  let body: Record<string, unknown>;
 
   switch (provider.id) {
     case 'anthropic':

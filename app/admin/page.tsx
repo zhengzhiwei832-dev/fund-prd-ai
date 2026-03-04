@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { getGenerations, getDashboardStats, DashboardStats, GenerationRecord } from '@/lib/supabase';
 import {
   LineChart,

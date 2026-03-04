@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AI_PROVIDERS, AIProvider, callAIAPI } from '@/lib/ai-config';
+import { AI_PROVIDERS, AIProvider } from '@/lib/ai-config';
 
 interface RequirementFormProps {
   onSubmit: (requirement: string, context: string, provider: AIProvider, apiKey: string, model: string) => void;
