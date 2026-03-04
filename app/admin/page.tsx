@@ -153,10 +153,7 @@ export default function AdminPage() {
                       outerRadius={100}
                       dataKey="count"
                       nameKey="provider"
-                      label={(props) => {
-                        const { provider, count } = props as { provider: string; count: number };
-                        return `${provider}: ${count}`;
-                      }}
+                      label={(props: { provider?: string; count?: number; value?: number; name?: string }) => `${props.provider || ''}: ${props.count || props.value || 0}`}
                     >
                       {stats.providerStats.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
